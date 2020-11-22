@@ -9,7 +9,7 @@ import axios from 'axios'
 // 引用 node-schedule 套件
 import schedule from 'node-schedule'
 
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
+// process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
 
 let gym = []
 const updataData = async () => {
