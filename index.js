@@ -9,11 +9,17 @@ import axios from 'axios'
 // 引用 node-schedule 套件
 import schedule from 'node-schedule'
 
+import https from 'https'
+
+const httpsAgent = new https.Agent({
+  rejectUnauthorized: false
+})
+
 // process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
 
 let gym = []
 const updataData = async () => {
-  const response = await axios.get('https://iplay.sa.gov.tw/api/GymSearchAllList')
+  const response = await axios.get('https://iplay.sa.gov.tw/api/GymSearchAllList', { httpsAgent })
   gym = response.dat
 }
 schedule.scheduleJob('* * 0 * * *', () => {
@@ -55,8 +61,8 @@ const distance = (lat1, lon1, lat2, lon2, unit) => {
 
 bot.on('message', async event => {
   try {
-    const response = await axios.get('https://iplay.sa.gov.tw/api/GymSearchAllList')
-    gym = response.data
+    // const response = await axios.get('https://iplay.sa.gov.tw/api/GymSearchAllList')
+    // gym = response.data
     const text = event.message.text
     const total = []
     const minArry = []
