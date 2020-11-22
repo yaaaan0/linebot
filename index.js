@@ -61,8 +61,8 @@ const distance = (lat1, lon1, lat2, lon2, unit) => {
 
 bot.on('message', async event => {
   try {
-    // const response = await axios.get('https://iplay.sa.gov.tw/api/GymSearchAllList')
-    // gym = response.data
+    const response = await axios.get('https://iplay.sa.gov.tw/api/GymSearchAllList', { httpsAgent })
+    gym = response.data
     const text = event.message.text
     const total = []
     const minArry = []
