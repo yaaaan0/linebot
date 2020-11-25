@@ -142,7 +142,7 @@ bot.on('message', async event => {
               contents: [
                 {
                   type: 'text',
-                  text: '建議運動量',
+                  text: '建議運動量🏃‍♀️',
                   weight: 'bold',
                   size: 'xxl',
                   margin: 'md'
