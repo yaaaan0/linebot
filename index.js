@@ -129,81 +129,29 @@ bot.on('message', async event => {
         })
       } else if (text === '如何使用❔') {
         event.reply('您好👋\n' + '歡迎使用【動ㄘ動ㄘ-運動場查詢系統】\n' + '使用方法為下：\n' + '❣️打開下方功能表即可傳送位置訊息\n' + '❣️會依照您傳的位置訊息搜尋附近的運動場地\n' + '❣️如有疑問可以搜尋 @help\n')
-      } else if (text === '@activty') {
+      } else if (text === '@sport') {
         event.reply({
           type: 'flex',
           altText: '您不能不知道....',
           contents:
-      {
-        type: 'bubble',
-        body: {
-          type: 'box',
-          layout: 'vertical',
-          contents: [
-            {
-              type: 'text',
-              text: 'How much of physical activity is recommended?',
-              color: '#f9cb0d',
-              size: 'xxs'
-            },
-            {
-              type: 'text',
-              text: '建議運動量',
-              weight: 'bold',
-              size: 'xxl',
-              margin: 'md'
-            },
-            {
-              type: 'separator',
-              margin: 'xxl'
-            },
-            {
+          {
+            type: 'bubble',
+            body: {
               type: 'box',
               layout: 'vertical',
-              margin: 'xxl',
-              spacing: 'sm',
               contents: [
                 {
-                  type: 'box',
-                  layout: 'horizontal',
-                  contents: [
-                    {
-                      type: 'text',
-                      text: '5-17歲的兒童和青少年',
-                      size: 'sm',
-                      color: '#FA8072',
-                      flex: 0,
-                      weight: 'bold'
-                    }
-                  ]
+                  type: 'text',
+                  text: '建議運動量',
+                  weight: 'bold',
+                  size: 'xxl',
+                  margin: 'md'
                 },
                 {
-                  type: 'box',
-                  layout: 'horizontal',
-                  contents: [
-                    {
-                      type: 'text',
-                      text: '◎每天至少進行60分鐘中等強度到高強度運動。',
-                      size: 'sm',
-                      color: '#555555',
-                      flex: 0,
-                      wrap: true
-                    }
-                  ]
-                },
-                {
-                  type: 'box',
-                  layout: 'horizontal',
-                  contents: [
-                    {
-                      type: 'text',
-                      text: '◎每週至少三次加強肌肉和骨骼的活動。',
-                      size: 'sm',
-                      color: '#555555',
-                      flex: 0,
-                      wrap: true
-                    }
-                  ]
+                  type: 'text',
+                  text: 'How much of physical activity is recommended?',
+                  color: '#f9cb0d',
+                  size: 'xxs'
                 },
                 {
                   type: 'separator',
@@ -221,7 +169,7 @@ bot.on('message', async event => {
                       contents: [
                         {
                           type: 'text',
-                          text: '18-64歲成人',
+                          text: '5-17歲的兒童和青少年',
                           size: 'sm',
                           color: '#FA8072',
                           flex: 0,
@@ -235,7 +183,7 @@ bot.on('message', async event => {
                       contents: [
                         {
                           type: 'text',
-                          text: '◎每週至少150分鐘的中等強度運動，或一周至少75分鐘的高強度運動。',
+                          text: '◎每天至少進行60分鐘中等強度到高強度運動。',
                           size: 'sm',
                           color: '#555555',
                           flex: 0,
@@ -249,7 +197,7 @@ bot.on('message', async event => {
                       contents: [
                         {
                           type: 'text',
-                          text: '◎每週至少有兩天加強主肌群的活動。',
+                          text: '◎每週至少三次加強肌肉和骨骼的活動。',
                           size: 'sm',
                           color: '#555555',
                           flex: 0,
@@ -260,84 +208,133 @@ bot.on('message', async event => {
                     {
                       type: 'separator',
                       margin: 'xxl'
-                    }
-                  ]
-                },
-                {
-                  type: 'box',
-                  layout: 'vertical',
-                  margin: 'xxl',
-                  spacing: 'sm',
-                  contents: [
+                    },
                     {
                       type: 'box',
-                      layout: 'horizontal',
+                      layout: 'vertical',
+                      margin: 'xxl',
+                      spacing: 'sm',
                       contents: [
                         {
-                          type: 'text',
-                          text: '65歲以上成人',
-                          size: 'sm',
-                          color: '#FA8072',
-                          flex: 0,
-                          weight: 'bold'
+                          type: 'box',
+                          layout: 'horizontal',
+                          contents: [
+                            {
+                              type: 'text',
+                              text: '18-64歲成人',
+                              size: 'sm',
+                              color: '#FA8072',
+                              flex: 0,
+                              weight: 'bold'
+                            }
+                          ]
+                        },
+                        {
+                          type: 'box',
+                          layout: 'horizontal',
+                          contents: [
+                            {
+                              type: 'text',
+                              text: '◎每週至少150分鐘的中等強度運動，或一周至少75分鐘的高強度運動。',
+                              size: 'sm',
+                              color: '#555555',
+                              flex: 0,
+                              wrap: true
+                            }
+                          ]
+                        },
+                        {
+                          type: 'box',
+                          layout: 'horizontal',
+                          contents: [
+                            {
+                              type: 'text',
+                              text: '◎每週至少有兩天加強主肌群的活動。',
+                              size: 'sm',
+                              color: '#555555',
+                              flex: 0,
+                              wrap: true
+                            }
+                          ]
+                        },
+                        {
+                          type: 'separator',
+                          margin: 'xxl'
                         }
                       ]
                     },
                     {
                       type: 'box',
-                      layout: 'horizontal',
+                      layout: 'vertical',
+                      margin: 'xxl',
+                      spacing: 'sm',
                       contents: [
                         {
-                          type: 'text',
-                          text: '◎每週至少150分鐘的中等強度運動，或一周至少75分鐘的高強度運動。',
-                          size: 'sm',
-                          color: '#555555',
-                          flex: 0,
-                          wrap: true
-                        }
-                      ]
-                    },
-                    {
-                      type: 'box',
-                      layout: 'horizontal',
-                      contents: [
+                          type: 'box',
+                          layout: 'horizontal',
+                          contents: [
+                            {
+                              type: 'text',
+                              text: '65歲以上成人',
+                              size: 'sm',
+                              color: '#FA8072',
+                              flex: 0,
+                              weight: 'bold'
+                            }
+                          ]
+                        },
                         {
-                          type: 'text',
-                          text: '◎行動不便者每週至少有3天從事運動以加強平衡和防止跌倒。',
-                          size: 'sm',
-                          color: '#555555',
-                          flex: 0,
-                          wrap: true
+                          type: 'box',
+                          layout: 'horizontal',
+                          contents: [
+                            {
+                              type: 'text',
+                              text: '◎每週至少150分鐘的中等強度運動，或一周至少75分鐘的高強度運動。',
+                              size: 'sm',
+                              color: '#555555',
+                              flex: 0,
+                              wrap: true
+                            }
+                          ]
+                        },
+                        {
+                          type: 'box',
+                          layout: 'horizontal',
+                          contents: [
+                            {
+                              type: 'text',
+                              text: '◎行動不便者每週至少有3天從事運動以加強平衡和防止跌倒。',
+                              size: 'sm',
+                              color: '#555555',
+                              flex: 0,
+                              wrap: true
+                            }
+                          ]
                         }
                       ]
                     }
                   ]
                 }
               ]
+            },
+            footer: {
+              type: 'box',
+              layout: 'vertical',
+              contents: [
+                {
+                  type: 'button',
+                  action: {
+                    type: 'uri',
+                    label: '詳細資訊',
+                    uri: 'https://www.who.int/zh/news-room/fact-sheets/detail/physical-activity'
+                  },
+                  color: '#f9cb0d',
+                  style: 'primary',
+                  height: 'sm'
+                }
+              ]
             }
-          ]
-        },
-        footer: {
-          type: 'box',
-          layout: 'vertical',
-          contents: [
-            {
-              type: 'button',
-              action: {
-                type: 'uri',
-                label: '詳細資訊',
-                uri: 'https://www.who.int/zh/news-room/fact-sheets/detail/physical-activity'
-              },
-              color: '#f9cb0d'
-            }
-          ]
-        },
-        styles: {
-          footer: {
-            separator: true
           }
-        }
-      }
         }
         )
       }
