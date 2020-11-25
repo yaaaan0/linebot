@@ -325,14 +325,17 @@ bot.on('message', async event => {
                   type: 'button',
                   action: {
                     type: 'uri',
-                    label: '詳細資訊',
+                    label: 'SEE MORE',
                     uri: 'https://www.who.int/zh/news-room/fact-sheets/detail/physical-activity'
                   },
-                  color: '#f9cb0d',
-                  style: 'primary',
-                  height: 'sm'
+                  color: '#f9cb0d'
                 }
               ]
+            },
+            styles: {
+              footer: {
+                separator: true
+              }
             }
           }
         }
