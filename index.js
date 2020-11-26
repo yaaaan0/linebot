@@ -349,6 +349,32 @@ bot.on('message', async event => {
           }
         }
         )
+      } else if (text === '@功能列表') {
+        event.reply({
+          type: 'text',
+          text: '🙇‍♀️有什麼可以幫您的呢',
+          quickReply: {
+            items: [
+              {
+                type: 'message',
+                imageUrl: 'https://xxx/image1.png',
+                action: {
+                  type: 'location',
+                  label: '搜尋運動場|傳送位置訊息🔎'
+                }
+              },
+              {
+                type: 'action',
+                imageUrl: 'https://xxx/image2.png',
+                action: {
+                  type: 'message',
+                  label: '查看建議運動量表🏃‍♀️',
+                  text: '查看建議運動量表🏃‍♀️'
+                }
+              }
+            ]
+          }
+        })
       }
     } else if (event.message.type === 'location') {
       for (const data of gym) {
