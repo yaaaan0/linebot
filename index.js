@@ -517,7 +517,7 @@ bot.on('message', async event => {
                   action: {
                     type: 'uri',
                     label: '◎位置訊息',
-                    uri: 'https://www.google.com.tw/maps/search/' + reply[i].data.Address
+                    uri: 'https://www.google.com.tw/maps/search/' + reply[i].data.lat + ',' + reply[i].data.lng
                   },
                   color: '#FA8072',
                   style: 'link',
@@ -704,7 +704,7 @@ bot.on('message', async event => {
                   action: {
                     type: 'uri',
                     label: '◎位置訊息',
-                    uri: 'https://www.google.com.tw/maps/search/' + reply[i].data.Address
+                    uri: 'https://www.google.com.tw/maps/search/' + reply[i].data.lat + ',' + reply[i].data.lng
                   },
                   color: '#FA8072',
                   style: 'link',
