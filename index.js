@@ -349,10 +349,10 @@ bot.on('message', async event => {
           }
         }
         )
-      } else if (text === '@功能列表') {
+      } else if (text === '@功能表') {
         event.reply({
           type: 'text',
-          text: '🙇‍♀️有什麼可以幫您的呢',
+          text: '今天需要做什麼呢💬',
           quickReply: {
             items: [
               {
@@ -360,7 +360,7 @@ bot.on('message', async event => {
                 imageUrl: 'https://xxx/image1.png',
                 action: {
                   type: 'location',
-                  label: '搜尋運動場|傳送位置訊息🔎'
+                  label: '搜尋運動場 | 傳送位置訊息📍'
                 }
               },
               {
