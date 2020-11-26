@@ -556,6 +556,14 @@ bot.on('message', async event => {
                   type: 'location',
                   label: '查詢其他運動場🔎'
                 }
+              }, {
+                type: 'action',
+                imageUrl: 'https://xxx/image2.png',
+                action: {
+                  type: 'message',
+                  label: '查看建議運動量表🏃‍♀️',
+                  text: '查看建議運動量表🏃‍♀️'
+                }
               },
               {
                 type: 'message',
