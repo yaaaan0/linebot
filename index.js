@@ -472,6 +472,8 @@ bot.on('message', async event => {
             }
           }
         })
+      } else {
+        event.reply('請輸入正確指令或是利用下面選單列表')
       }
     } else if (event.message.type === 'location') {
       for (const data of gym) {
