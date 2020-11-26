@@ -360,7 +360,7 @@ bot.on('message', async event => {
                 imageUrl: 'https://xxx/image1.png',
                 action: {
                   type: 'location',
-                  label: '搜尋運動場 | 傳送位置訊息📍'
+                  label: '查詢運動場 | 傳送位置訊息📍'
                 }
               },
               {
