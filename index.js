@@ -117,20 +117,12 @@ bot.on('message', async event => {
               }
             },
             {
-              type: 'message',
-              imageUrl: 'https://xxx/image1.png',
-              action: {
-                type: 'location',
-                label: '傳送位置訊息🔎'
-              }
-            },
-            {
               type: 'action',
               imageUrl: 'https://xxx/image2.png',
               action: {
                 type: 'message',
-                label: '查看建議運動量表🏃‍♀️',
-                text: '查看建議運動量表🏃‍♀️'
+                label: '關於我 | line bot🤖',
+                text: 'line bot🤖'
               }
             }
             ]
@@ -352,7 +344,7 @@ bot.on('message', async event => {
       } else if (text === '@功能表') {
         event.reply({
           type: 'text',
-          text: '今天需要做什麼呢💬',
+          text: '今天想做什麼呢💬',
           quickReply: {
             items: [
               {
@@ -373,6 +365,103 @@ bot.on('message', async event => {
                 }
               }
             ]
+          }
+        })
+      } else if (text === 'line bot🤖') {
+        event.reply({
+          type: 'flex',
+          altText: 'about me...',
+          contents:
+          {
+            type: 'bubble',
+            body: {
+              type: 'box',
+              layout: 'vertical',
+              contents: [
+                {
+                  type: 'box',
+                  layout: 'horizontal',
+                  contents: [
+                    {
+                      type: 'image',
+                      url: 'https://i.imgur.com/m3d4lvI.png',
+                      size: 'xxl',
+                      aspectMode: 'cover',
+                      aspectRatio: '150:196',
+                      gravity: 'center',
+                      flex: 1,
+                      align: 'center'
+                    }
+                  ]
+                },
+                {
+                  type: 'box',
+                  layout: 'horizontal',
+                  contents: [
+                    {
+                      type: 'box',
+                      layout: 'vertical',
+                      contents: [
+                        {
+                          type: 'image',
+                          url: 'https://i.imgur.com/tg1l90J.jpg',
+                          aspectMode: 'cover',
+                          size: 'full'
+                        }
+                      ],
+                      cornerRadius: '100px',
+                      width: '72px',
+                      height: '72px'
+                    },
+                    {
+                      type: 'box',
+                      layout: 'vertical',
+                      contents: [
+                        {
+                          type: 'text',
+                          contents: [
+                            {
+                              type: 'span',
+                              text: 'line bot ID',
+                              weight: 'bold',
+                              color: '#000000'
+                            },
+                            {
+                              type: 'span',
+                              text: '     '
+                            },
+                            {
+                              type: 'span',
+                              text: ' @003sjteb'
+                            }
+                          ],
+                          size: 'sm',
+                          wrap: true
+                        },
+                        {
+                          type: 'box',
+                          layout: 'baseline',
+                          contents: [
+                            {
+                              type: 'text',
+                              size: 'sm',
+                              color: '#bcbcbc',
+                              text: '有任何問題歡迎郵件 chun8415@gmail.com',
+                              wrap: true
+                            }
+                          ],
+                          spacing: 'sm',
+                          margin: 'md'
+                        }
+                      ]
+                    }
+                  ],
+                  spacing: 'xl',
+                  paddingAll: '20px'
+                }
+              ],
+              paddingAll: '0px'
+            }
           }
         })
       }
