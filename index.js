@@ -782,6 +782,15 @@ bot.on('message', async event => {
                 imageUrl: 'https://xxx/image2.png',
                 action: {
                   type: 'message',
+                  label: '查看建議運動量表🏃‍♀️',
+                  text: '查看建議運動量表🏃‍♀️'
+                }
+              },
+              {
+                type: 'action',
+                imageUrl: 'https://xxx/image2.png',
+                action: {
+                  type: 'message',
                   label: '回家睡大頭覺😴',
                   text: '😴😴😴'
                 }
