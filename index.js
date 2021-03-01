@@ -20,7 +20,7 @@ const httpsAgent = new https.Agent({
 let gym = []
 const updataData = async () => {
   const response = await axios.get('https://iplay.sa.gov.tw/api/GymSearchAllList', { httpsAgent })
-  gym = response.dat
+  gym = response.data
 }
 schedule.scheduleJob('* * 0 * * *', () => {
   updataData()
@@ -42,11 +42,11 @@ const distance = (lat1, lon1, lat2, lon2, unit) => {
   if ((lat1 === lat2) && (lon1 === lon2)) {
     return 0
   } else {
-    var radlat1 = Math.PI * lat1 / 180
-    var radlat2 = Math.PI * lat2 / 180
-    var theta = lon1 - lon2
-    var radtheta = Math.PI * theta / 180
-    var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta)
+    let radlat1 = Math.PI * lat1 / 180
+    let radlat2 = Math.PI * lat2 / 180
+    let theta = lon1 - lon2
+    let radtheta = Math.PI * theta / 180
+    let dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta)
     if (dist > 1) {
       dist = 1
     }
@@ -691,12 +691,12 @@ bot.on('message', async event => {
                 }
               },
               {
-                type: 'message',
-                imageUrl: 'https://xxx/image1.png',
+                type: 'action',
+                imageUrl: 'https://xxx/image2.png',
                 action: {
                   type: 'message',
-                  label: '不需要',
-                  text: '不需要'
+                  label: '回家睡大頭覺😴',
+                  text: '😴😴😴'
                 }
               }
             ]
@@ -877,12 +877,12 @@ bot.on('message', async event => {
                 }
               },
               {
-                type: 'message',
-                imageUrl: 'https://xxx/image1.png',
+                type: 'action',
+                imageUrl: 'https://xxx/image2.png',
                 action: {
                   type: 'message',
-                  label: '不需要',
-                  text: '不需要'
+                  label: '回家睡大頭覺😴',
+                  text: '😴😴😴'
                 }
               }
             ]
@@ -920,7 +920,6 @@ bot.on('message', async event => {
                   text: '😴😴😴'
                 }
               }
-
             ]
           }
         })
